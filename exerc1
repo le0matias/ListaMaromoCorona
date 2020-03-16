@@ -1,0 +1,25 @@
+int main()
+{
+    float impar = 0, par = 0, total = 0;
+    float porcentagem = 0, qtdImpar = 0, qtdpar = 0, qtdTotal = 0;
+    int a[5];
+    int i;
+    for(i=0; i<5; i++){
+        printf("Entre com o numero para a posicao %d do vetor A \n", i+1);
+        scanf("%d", &a[i]);
+    }
+        for(i=0; i<5; i++){
+            if(a[i]%2!=0){
+                impar =  impar + a[i];
+                qtdImpar++;
+            }else{
+                par =  par + a[i];
+                qtdpar++;
+            }
+    }
+    total = impar + par;
+    qtdTotal = qtdImpar + qtdpar;
+    porcentagem = ((qtdImpar/qtdTotal) *100);
+    printf("Valores da soma dos impares %f \n  Valores da soma dos pares %f \n Valor da soma total %f \n Porcentagem de impares para os pares %.2f%%", impar, par, total, porcentagem);
+    return 0;
+}
