@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    int i, j, numRand, c, d, swap;
+    int k=0;
+    int matriz[9][9] = {{0}};
+    int vetor[81] = {0};
+    
+    srand(time(NULL));
+    
+    for(i = 0; i <= 8; i++) {
+        
+        numRand = (rand() % 10000);
+       
+        for(j = 0; j <= 8; j++) {
+        
+                numRand = (rand() % 1000);
+        
+                if(numRand%2 != 0){
+                
+                    matriz[i][j] = numRand;
+                
+                }
+                
+                else {
+                    
+                    matriz[i][j] = numRand+3;
+                    
+                }
+        
+            printf("\t[%3d]", matriz[i][j]);
+            
+        }  
+        
+        printf("\n\n");
+        
+    }
+       
+    for(i = 0; i <= 8; i++) {
+        
+        for(j = 0; j <=8; j++) {
+            
+            vetor[k] = matriz[i][j];
+            printf("[%3d]\n", vetor[k]);
+            k++;
+            
+        }
+        
+    }
+    
+    for (c = 0 ; c < 81 - 1; c++) {
+        
+        for (d = 0 ; d < 81 - c - 1; d++) {
+            
+            if (vetor[d] > vetor[d+1]) {
+                
+                swap       = vetor[d];
+                vetor[d]   = vetor[d+1];
+                vetor[d+1] = swap;
+        
+            }
+      
+        }
+    
+    }
+    
+    for (c = 0; c < 81; c++) {
+        
+        printf("[%3d]\n", vetor[c]);
+        
+    }
+}
