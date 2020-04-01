@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    
+    float notas[15]={0};
+    float soma = 0, media = 0;
+    
+    for(int i = 0; i < 15; i++) {
+        
+        printf("Entre com a nota do aluno: %d\n", i+1);
+        scanf("%f", &notas[i]);
+        soma = soma + notas[i];
+        
+    }
+    
+    media = soma/15;
+    
+    printf("A media geral foi de %.2f. \n", media);
+    
+}
+
