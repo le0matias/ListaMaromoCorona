@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main()
+{
+    int matriz[5], maior = 0, menor = 0;
+    float media = 0;
+    
+    for(int i = 0; i < 5; i++) {
+        
+        printf("entre com um valor: ");
+        scanf("%d", &matriz[i]);
+        
+        if (matriz[i] > maior){
+            
+            maior = matriz[i];
+            
+        }
+        
+        if (matriz[i] < menor){
+            
+            menor = matriz[i];
+            
+        }
+        
+        media += matriz[i];
+        
+    }
+
+    media = media/5;
+
+    for(int i = 0; i < 5; i++){
+        
+        printf("O valor na posicao %d eh de %d\n", i+1, matriz[i]);
+        
+    }
+
+    printf("Valor do maior eh %d, do menor eh %d, da media eh %.2f", maior, menor,media);
+
+    return 0;
+}
