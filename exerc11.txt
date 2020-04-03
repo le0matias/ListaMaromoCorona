@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+
+    int a =0, b=0, va[4]={0}, vb[4]={0};
+
+    while((a <= 0) || (a > 10000)) {
+        
+        printf("entre com valor positivo menor que 10000 para a: ");
+        scanf("%d", &a);
+        
+    }
+    
+    while((b <= 0) || (b > 10000)) {
+        
+        printf("entre com valor positivo menor que 10000 para b: ");
+        scanf("%d", &b);
+        
+    }
+
+    while(a > 0) {
+
+        for(int i=0; i<4; i++) {
+            va[i] = a % 10;
+            printf("[%d ]\n", va[i]);
+            a /= 10;
+        }
+        printf("\n");
+    }
+    
+    while(b > 0) {
+        
+        for(int i=0; i<4; i++) {
+            vb[i] = b % 10;
+            printf("[%d ]\n", vb[i]);
+            b /= 10;
+        }
+        printf("\n");
+    }
+
